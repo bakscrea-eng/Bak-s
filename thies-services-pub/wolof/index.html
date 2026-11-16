@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="wo">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thiès Services – Pub wolof</title>
+<style>
+  @font-face { font-family: Poppins; font-weight: 600; src: url(../node_modules/@fontsource/poppins/files/poppins-latin-600-normal.woff2) format("woff2"); }
+  @font-face { font-family: Poppins; font-weight: 800; src: url(../node_modules/@fontsource/poppins/files/poppins-latin-800-normal.woff2) format("woff2"); }
+  @font-face { font-family: Poppins; font-weight: 800; src: url(../node_modules/@fontsource/poppins/files/poppins-latin-ext-800-normal.woff2) format("woff2"); unicode-range: U+0100-024F; }
+  @font-face { font-family: Poppins; font-weight: 600; src: url(../node_modules/@fontsource/poppins/files/poppins-latin-ext-600-normal.woff2) format("woff2"); unicode-range: U+0100-024F; }
+  :root { --bg: #0B4744; --bg-d: #072F2D; --teal: #127C7F; --logo: #0F7C86; --orange: #F07C1E; --cream: #F4EFE6; --mint: #9FD6CC; --anth: #1E2422; }
+  html, body { margin: 0; background: #000; overflow: hidden; }
+  #stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; transform-origin: 0 0; font-family: Poppins, sans-serif;
+           background: radial-gradient(ellipse 90% 60% at 50% 38%, #11605B 0%, var(--bg) 55%, var(--bg-d) 100%); }
+  #rail { position: absolute; left: 50%; top: -400px; width: 150px; height: 2800px; margin-left: -75px; opacity: .16; transform: rotate(-14deg);
+          background:
+            linear-gradient(90deg, transparent 22px, var(--orange) 22px, var(--orange) 34px, transparent 34px, transparent 116px, var(--orange) 116px, var(--orange) 128px, transparent 128px),
+            repeating-linear-gradient(180deg, transparent 0 46px, #E8DCC8 46px 60px); }
+  #head { position: absolute; left: 60px; right: 60px; top: 150px; height: 430px; text-align: center; }
+  .hd { position: absolute; left: 0; right: 0; top: 0; opacity: 0; }
+  .wo { color: var(--cream); font-weight: 800; font-size: 96px; line-height: 1.04; letter-spacing: -2px; }
+  .wo .w { display: inline-block; margin: 0 .12em; }
+  .wo .w.acc { color: var(--orange); }
+  .fr { margin-top: 26px; color: var(--mint); font-weight: 600; font-size: 40px; line-height: 1.25; }
+  #phone { position: absolute; left: 252px; top: 640px; width: 576px; height: 1222px; border-radius: 74px; background: #0A1110;
+           box-shadow: 0 50px 120px rgba(0,0,0,.55), 0 0 0 3px rgba(255,255,255,.06) inset; transform-origin: 50% 0; }
+  #screen { position: absolute; left: 14px; top: 14px; width: 548px; height: 1186px; border-radius: 60px; overflow: hidden; background: #fff; }
+  #screen img { position: absolute; left: 0; top: 0; width: 548px; height: 1186px; }
+  #notch { position: absolute; left: 50%; top: 26px; width: 150px; height: 34px; margin-left: -75px; border-radius: 20px; background: #0A1110; }
+  .hl { position: absolute; border: 7px solid var(--orange); border-radius: 22px; opacity: 0;
+        box-shadow: 0 0 0 9999px rgba(7,47,45,.0), 0 0 34px rgba(240,124,30,.65); }
+  .tap { position: absolute; width: 90px; height: 90px; margin: -45px 0 0 -45px; border-radius: 50%; opacity: 0;
+         background: radial-gradient(circle, rgba(255,255,255,.95) 0 22%, rgba(240,124,30,.55) 23% 46%, transparent 47%); }
+  #dim { position: absolute; inset: 0; background: rgba(7,47,45,.55); opacity: 0; }
+  #logo { position: absolute; left: 50%; top: 50%; width: 300px; height: 300px; margin: -150px 0 0 -150px; opacity: 0; filter: drop-shadow(0 30px 60px rgba(0,0,0,.45)); }
+  #brand { position: absolute; left: 0; right: 0; text-align: center; opacity: 0; font-weight: 800; font-size: 120px; letter-spacing: -3px; color: var(--cream); }
+  #brand i { font-style: normal; color: var(--orange); }
+  #slogan { position: absolute; left: 0; right: 0; text-align: center; opacity: 0; }
+  #slogan .wo { font-size: 104px; }
+  #url { position: absolute; left: 0; right: 0; text-align: center; opacity: 0; }
+  #url span { display: inline-block; font-weight: 600; font-size: 52px; color: var(--anth); background: var(--cream); padding: 16px 48px; border-radius: 60px; }
+  #cta { position: absolute; left: 0; right: 0; text-align: center; opacity: 0; font-weight: 600; font-size: 40px; color: var(--mint); }
+  #grain { position: absolute; inset: 0; width: 1080px; height: 1920px; mix-blend-mode: overlay; opacity: .12; pointer-events: none; }
+  #play { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,.55);
+          color: #fff; font: 800 90px Poppins, sans-serif; cursor: pointer; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="rail"></div>
+  <div id="head"></div>
+  <div id="phone"><div id="screen"><div id="dim"></div></div><div id="notch"></div></div>
+  <svg id="logo" viewBox="0 0 100 100" aria-label="Thiès Services">
+    <rect x="2" y="2" width="96" height="96" rx="24" fill="#0F7C86"/>
+    <path d="M50 18 C32.3 18 22 30.5 22 44.5 C22 59 38 69 50 84 C62 69 78 59 78 44.5 C78 30.5 67.7 18 50 18 Z" fill="#fff"/>
+    <g fill="#F07C1E"><rect x="40" y="36.5" width="20" height="2"/><rect x="40" y="41.5" width="20" height="2"/><rect x="40" y="46.5" width="20" height="2"/><rect x="40" y="51.5" width="20" height="2"/></g>
+    <g fill="#0F7C86"><rect x="34" y="27" width="32" height="6" rx="3"/><rect x="43.2" y="31" width="4" height="25"/><rect x="52.8" y="31" width="4" height="25"/></g>
+  </svg>
+  <div id="brand">Thiès <i>Services</i></div>
+  <div id="slogan"></div>
+  <div id="url"><span>www.thiesservices.com</span></div>
+  <div id="cta">Tout Thiès, dans une seule recherche.</div>
+  <canvas id="grain" width="540" height="960"></canvas>
+</div>
+<script>
+// ---------------------------------------------------------------------------
+// Minutage : début de chaque réplique de la voix off (secondes). Le script
+// tools/minutage_vo.py le recalcule à partir de la vraie prise et écrit timing.json.
+// ---------------------------------------------------------------------------
+const DUREE = 30;
+let T = [0.5, 2.5, 8.5, 12.5, 17.3, 21.5, 25.7];
+const W = 1080, H = 1920;
+const cl = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const lin = (t, a, b) => cl((t - a) / (b - a));
+const lerp = (a, b, k) => a + (b - a) * k;
+const eo3 = x => 1 - Math.pow(1 - x, 3);
+const eio = x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+const eoBack = x => { const c1 = 1.7, c3 = c1 + 1; return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2); };
+function rng(seed) { return () => { seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed);
+  t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+const $ = id => document.getElementById(id);
+
+// Titres : wolof en grand (mots entre * en orange), traduction française dessous.
+const TITRES = [
+  ['Thiès, lan ngay *seet* ?', 'Thiès, tu cherches quoi ?'],
+  ['Benn recherche *rekk.*', 'Une seule recherche : plombier, pharmacie, taxi…'],
+  ['WhatsApp walla woote, *ci saa si.*', 'Écris ou appelle, tout de suite.'],
+  ['Amuloo jot ? *Waxal sa soxla.*', 'Pas le temps ? Décris ton besoin, un pro te rappelle.'],
+  ['Pharmacie de garde, *lopitaal…*', 'Santé, urgences et tout ce qui se passe à Thiès.'],
+  ['Yaa am liggéey ? *Ñu gis la !*', 'Professionnels : soyez trouvés en premier.'],
+];
+const titres = TITRES.map(([wo, fr]) => {
+  const d = document.createElement('div'); d.className = 'hd';
+  const w = document.createElement('div'); w.className = 'wo';
+  const words = wo.split(' ').map(x => { const s = document.createElement('span'); s.className = 'w' + (x.includes('*') ? ' acc' : ''); s.textContent = x.replace(/\*/g, ''); w.appendChild(s); return s; });
+  const f = document.createElement('div'); f.className = 'fr'; f.textContent = fr;
+  d.append(w, f); $('head').appendChild(d); return { d, words, f };
+});
+const sloganWords = ['Thiès', 'am', 'na', 'lépp.'].map((x, i) => { const s = document.createElement('span'); s.className = 'w' + (i === 3 ? ' acc' : ''); s.textContent = x; return s; });
+{ const w = document.createElement('div'); w.className = 'wo'; sloganWords.forEach(s => w.appendChild(s)); $('slogan').appendChild(w); }
+
+// Écrans de la maquette
+const screen = $('screen');
+const imgs = [1, 2, 3, 4, 5, 6, 7].map(i => { const im = document.createElement('img'); im.src = `ecrans/e${i}.png`; screen.insertBefore(im, $('dim')); return im; });
+// Plan des écrans : [écran, entrée] ; chaque écran glisse depuis la droite.
+const ECRANS = () => [[0, T[1] - .45], [1, T[2] - .4], [2, T[2] + 1.9], [3, T[3] + 1.75], [4, T[4] - .4], [5, T[5] - .4]];
+// Encadrés orange : [écran, x0, y0, x1, y1 en fraction de l'écran, début, fin, tap(x,y) ou null]
+const HL = () => [
+  [0, .03, .228, .955, .305, T[1] + .5, T[1] + 2.6, [.6, .267]],
+  [0, .03, .365, .95, .46, T[1] + 2.8, T[2] - .5, null],
+  [1, .03, .332, .62, .392, T[2] + .2, T[2] + 1.8, [.17, .362]],
+  [2, .02, .322, .985, .392, T[2] + 2.3, T[3] - .3, [.75, .357]],
+  [2, .035, .762, .965, .83, T[3] + .2, T[3] + 1.6, [.5, .796]],
+  [3, .02, .275, .985, .383, T[3] + 2.1, T[3] + 3.3, null],
+  [3, .02, .892, .985, .958, T[3] + 3.4, T[4] - .5, [.5, .925]],
+  [4, .02, .09, .985, .182, T[4] + .2, T[4] + 1.5, null],
+  [4, .02, .255, .985, .338, T[4] + 1.5, T[4] + 2.9, [.86, .3]],
+  [4, .02, .61, .985, .708, T[4] + 2.9, T[5] - .5, null],
+  [5, .02, .44, .985, .615, T[5] + .4, T[6] - .5, [.5, .572]],
+];
+const hlEls = HL().map(() => { const e = document.createElement('div'); e.className = 'hl'; screen.appendChild(e); return e; });
+const tapEls = HL().map(() => { const e = document.createElement('div'); e.className = 'tap'; screen.appendChild(e); return e; });
+const SW = 548, SH = 1186;
+
+// grain
+const gc = $('grain'), gx = gc.getContext('2d'), gimg = gx.createImageData(540, 960);
+function grain(frame) { const r = rng(500 + frame), d = gimg.data; for (let i = 0; i < d.length; i += 4) { const v = 128 + (r() - .5) * 120; d[i] = d[i + 1] = d[i + 2] = v; d[i + 3] = 255; } gx.putImageData(gimg, 0, 0); }
+
+function kinetic(words, t0, t, out) {
+  words.forEach((w, i) => { const k = eoBack(lin(t, t0 + i * .07, t0 + .38 + i * .07));
+    w.style.opacity = cl(k * 1.5) * (1 - out); w.style.transform = `translateY(${(1 - k) * 60 - out * 40}px) scale(${.6 + .4 * k})`; });
+}
+
+function renderAt(t, frame = Math.round(t * 30)) {
+  const OUT = T[6] - .3;                  // début de la fin (logo)
+  // fond : la voie défile en continu
+  $('rail').style.transform = `rotate(-14deg) translateY(${(t * 90) % 60}px)`;
+  // titres
+  const starts = [0.15, T[1] - .3, T[2] - .3, T[3] - .3, T[4] - .3, T[5] - .3, OUT];
+  titres.forEach((h, i) => { const a = starts[i], b = starts[i + 1];
+    const on = t >= a && t < b; h.d.style.opacity = on ? 1 : 0; if (!on) return;
+    const out = eo3(lin(t, b - .25, b)); kinetic(h.words, a, t, out);
+    const fk = eo3(lin(t, a + .35, a + .8)); h.f.style.opacity = fk * (1 - out); h.f.style.transform = `translateY(${(1 - fk) * 20}px)`; });
+  // intro : logo au centre, puis il cède la place au téléphone
+  const logo = $('logo');
+  const inK = eoBack(lin(t, .05, .6)), upK = eio(lin(t, 1.5, 2.2));
+  const endK = eoBack(lin(t, OUT + .25, OUT + .85));
+  let ls, lo, ly;
+  if (t < OUT) { ls = (.4 + .6 * inK) * lerp(1, .55, upK); lo = cl(inK * 2) * (1 - upK); ly = lerp(960, 760, upK); }
+  else { ls = .3 + .7 * endK; lo = cl(endK * 2); ly = 560; }
+  logo.style.opacity = lo; logo.style.top = ly + 'px'; logo.style.transform = `scale(${ls}) rotate(${(1 - (t < OUT ? inK : endK)) * -12}deg)`;
+  // téléphone : monte après l'intro, redescend à la fin
+  const ph = $('phone');
+  const rise = eo3(lin(t, T[1] - .9, T[1] - .1)), fall = eio(lin(t, OUT - .1, OUT + .5));
+  ph.style.transform = `translateY(${(1 - rise) * 1300 + fall * 1400}px) rotate(${(1 - rise) * 6 - fall * 4}deg)`;
+  // écrans qui glissent
+  const plan = ECRANS(); let cur = -1;
+  plan.forEach(([e, at], i) => { if (t >= at) cur = i; });
+  imgs.forEach(im => { im.style.visibility = 'hidden'; });
+  if (cur >= 0) {
+    const [e, at] = plan[cur], k = eio(lin(t, at, at + .45));
+    imgs[e].style.visibility = 'visible'; imgs[e].style.transform = `translateX(${(1 - k) * SW}px)`;
+    if (cur > 0 && k < 1) { const pe = plan[cur - 1][0]; imgs[pe].style.visibility = 'visible'; imgs[pe].style.transform = `translateX(${-k * SW * .35}px)`; }
+  } else { imgs[0].style.visibility = 'visible'; imgs[0].style.transform = 'none'; }
+  // encadrés + taps
+  let dimK = 0;
+  HL().forEach(([e, x0, y0, x1, y1, a, b, tap], i) => {
+    const el = hlEls[i], tp = tapEls[i];
+    const on = t > a && t < b && cur >= 0 && plan[cur][0] === e;
+    const k = eoBack(lin(t, a, a + .35)), out = lin(t, b - .2, b);
+    el.style.opacity = on ? 1 - out : 0;
+    el.style.left = x0 * SW + 'px'; el.style.top = y0 * SH + 'px'; el.style.width = (x1 - x0) * SW + 'px'; el.style.height = (y1 - y0) * SH + 'px';
+    el.style.transform = `scale(${1.15 - .15 * k})`;
+    if (on) dimK = Math.max(dimK, (1 - out) * cl(k));
+    if (tap) { const ta = a + .55, tk = lin(t, ta, ta + .5);
+      tp.style.left = tap[0] * SW + 'px'; tp.style.top = tap[1] * SH + 'px';
+      tp.style.opacity = on && tk > 0 && tk < 1 ? 1 - tk : 0; tp.style.transform = `scale(${.4 + tk * 1.3})`; }
+  });
+  $('dim').style.opacity = 0;   // l'image reste lisible : pas d'assombrissement global
+  // fin : nom, slogan wolof, URL
+  const bk = eoBack(lin(t, OUT + .5, OUT + 1.0));
+  const br = $('brand'); br.style.top = '820px'; br.style.opacity = t > OUT + .5 ? 1 : 0; br.style.transform = `translateY(${(1 - bk) * 60}px) scale(${.75 + .25 * bk})`;
+  const sl = $('slogan'); sl.style.top = '1000px'; sl.style.opacity = t > OUT + .7 ? 1 : 0; kinetic(sloganWords, OUT + .75, t, 0);
+  const ck = eo3(lin(t, OUT + 1.3, OUT + 1.7)); $('cta').style.top = '1150px'; $('cta').style.opacity = ck;
+  const uk = eoBack(lin(t, OUT + 1.5, OUT + 1.9)); $('url').style.top = '1290px'; $('url').style.opacity = t > OUT + 1.5 ? 1 : 0; $('url').style.transform = `scale(${Math.max(.001, uk)})`;
+  grain(frame);
+}
+
+(async () => {
+  try { const r = await fetch('timing.json'); if (r.ok) { const j = await r.json(); if (Array.isArray(j.debuts) && j.debuts.length === 7) T = j.debuts; } } catch (e) {}
+  await Promise.all(imgs.map(im => im.decode()));
+  await document.fonts.load('800 40px Poppins'); await document.fonts.load('600 40px Poppins');
+  window.renderAt = renderAt; window.DUREE = DUREE; renderAt(0); window.ready = true;
+  if (!new URLSearchParams(location.search).has('render')) {
+    const st = $('stage'); const fit = () => { const k = Math.min(innerWidth / W, innerHeight / H); st.style.transform = `scale(${k})`; }; fit(); addEventListener('resize', fit);
+    const b = document.createElement('div'); b.id = 'play'; b.textContent = '▶ Lecture'; st.appendChild(b);
+    const au = new Audio('audio/mix_wolof.wav');
+    b.onclick = () => { b.remove(); au.play(); const t0 = performance.now();
+      const loop = () => { const tt = au.currentTime || (performance.now() - t0) / 1000; renderAt(Math.min(tt, DUREE - .001)); if (tt < DUREE) requestAnimationFrame(loop); }; loop(); };
+  }
+})();
+</script>
+</body>
+</html>

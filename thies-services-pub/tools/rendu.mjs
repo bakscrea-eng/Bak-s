@@ -11,7 +11,7 @@ const page = await browser.newPage({ viewport: { width: 1080, height: 1920 }, de
 page.setDefaultTimeout(0);
 page.on('console', m => { if (m.type() === 'error' || m.type() === 'warning') console.error('[page]', m.text()); });
 page.on('pageerror', e => console.error('[pageerror]', e.message));
-await page.goto(`http://localhost:${PORT}/index.html?render`, { waitUntil: 'commit' });
+await page.goto(`http://localhost:${PORT}/${process.env.PAGE || 'index.html'}?render`, { waitUntil: 'commit' });
 await page.waitForFunction(() => window.ready === true, null, { timeout: 600000 });
 const shot = async (t, f) => { await page.evaluate(([t, f]) => window.renderAt(t, f), [t, f]); return page.screenshot({ type: mode === 'stills' ? 'png' : 'jpeg', quality: mode === 'stills' ? undefined : 95 }); };
 
